@@ -1,5 +1,6 @@
 *.class
 *.db
+*.gitignore
 # Package Files #
 *.jar
 *.war
