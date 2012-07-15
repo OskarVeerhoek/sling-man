@@ -10,15 +10,18 @@ function love.load()
 end
 function love.update(dt) 
 	if love.keyboard.isDown("left") then
-		player_rotation = player_rotation - dt
+		use_mouse = false
+		player_rotation = player_rotation - dt * 2
 	elseif love.keyboard.isDown("right") then
-		player_rotation = player_rotation + dt
+		use_mouse = false
+		player_rotation = player_rotation + dt * 2
 	end
 	if use_mouse == true then
-		player_rotation = math.atan2(player_y - player_destination_y, player_x - player_destination_x)
-		player_x = player_x - math.cos(player_rotation)
-		player_y = player_y - math.sin(player_rotation)
-		if player_x == player_destination_x and player_y == player_destination_y then
+		rotation = math.atan2(player_y - player_destination_y, player_x - player_destination_x)
+		player_x = player_x - math.cos(rotation) * 60 * dt * 2
+		player_y = player_y - math.sin(rotation) * 60 * dt * 2
+		player_rotation = rotation - 1.570796327
+		if player_x < player_destination_x + 1 and player_x > player_destination_x - 1 and player_y < player_destination_y + 1 and player_y > player_destination_y - 1 then
 			use_mouse = false
 		end
 	end
