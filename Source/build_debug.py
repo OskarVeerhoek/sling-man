@@ -1,5 +1,6 @@
 import shutil;
 import os
+
 for file in os.listdir("."):
     extension = os.path.splitext(file)[1];    
     if extension == ".lua":
