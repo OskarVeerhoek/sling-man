@@ -1,0 +1,11 @@
+Description:
+
+Catch the other people and sling your way to victory but look out for obstacles such as zombies or water and fire!
+
+Features:
+- obstacles
+ - water
+ - fire
+ - animals
+  - tigers
+  - octupus in water
