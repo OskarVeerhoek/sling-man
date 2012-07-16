@@ -1,0 +1,19 @@
+-- DEV 0.01 -- 
+
+Changelog:
+
+- Added Background Image (500x500)
+- Added Player Image (32x32)
+- Added Victim Image (32x32)
+- Added Player
+ - Added Player Movement
+  - Mouse Clicks
+  - Keyboard Keys
+- Added Background
+- Added Victim
+ - Added Victim Movement
+  - Runs in the opposite direction of the player
+
+Known Bugs:
+
+Bug #000: Enemy constantly enters corner and is thus easily catchable
