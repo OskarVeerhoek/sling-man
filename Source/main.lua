@@ -8,6 +8,18 @@ function love.load()
 	player_rotation = 0 --[[ radians --]]
 	use_mouse = false
 end
+function check_player_collision()
+	if player_x - 16 < 0 then
+		player_x = 16
+	elseif player_x + 16 > 500 then
+		player_x = 484
+	end
+	if player_y - 16 < 0 then
+		player_y = 16
+	elseif player_y + 16 > 500 then
+		player_y = 484
+	end
+end
 function love.update(dt) 
 	if love.keyboard.isDown("left") then
 		use_mouse = false
@@ -34,6 +46,7 @@ function love.update(dt)
 		player_x = player_x + math.cos(player_rotation + 1.570796327) * 60 * dt * 2;
 		player_y = player_y + math.sin(player_rotation + 1.570796327) * 60 * dt * 2;
 	end
+	check_player_collision();
 end
 function love.mousepressed(x, y, button)
 	use_mouse = true
