@@ -17,3 +17,10 @@ Changelog:
 Known Bugs:
 
 Bug #000: Enemy constantly enters corner and is thus easily catchable
+Bug #001: Player Blinks when it reaches the destination specified by pressing the mouse
+
+-- DEV 0.02 --
+
+Changelog:
+
+- Fixed bug #001
