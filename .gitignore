@@ -1,5 +1,6 @@
 *.class
 *.db
+*.tmp
 Temp
 *.gitignore
 # Package Files #
