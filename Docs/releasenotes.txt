@@ -6,21 +6,28 @@ Changelog:
 - Added Player Image (32x32)
 - Added Victim Image (32x32)
 - Added Player
- - Added Player Movement
-  - Mouse Clicks
-  - Keyboard Keys
+-- Added Player Movement
+--- Mouse Clicks
+--- Keyboard Keys
 - Added Background
 - Added Victim
- - Added Victim Movement
-  - Runs in the opposite direction of the player
+-- Added Victim Movement
+--- Runs in the opposite direction of the player
 
 Known Bugs:
 
 Bug #000: Enemy constantly enters corner and is thus easily catchable
-Bug #001: Player Blinks when it reaches the destination specified by pressing the mouse
+Bug #001: Player blinks when it reaches the destination specified by pressing the mouse
 
 -- DEV 0.02 --
 
 Changelog:
 
+- Enemy only moves when you're closer than 150 pixels to it
+- Enemy moves faster the closer you come to it
 - Fixed bug #001
+- Fixed bug #000
+
+Known Bugs:
+
+Bug #002: Enemy is stuck in the bounding circle
