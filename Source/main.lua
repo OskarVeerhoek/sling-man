@@ -49,9 +49,14 @@ function love.update(dt)
 		player_rotation = player_rotation + dt * 2
 	end
 	if love.mouse.isDown("l") then
-		use_mouse = true
-		player_destination_x = love.mouse.getX()
-		player_destination_y = love.mouse.getY()
+		x = love.mouse.getX()
+		y = love.mouse.getY()
+		if x > player_x - 1 and x < player_x + 1 and y > player_y - 1 and y < player_y + 1 then
+		else
+			use_mouse = true
+			player_destination_x = x
+			player_destination_y = y
+		end
 	end
 	if use_mouse == true then
 		rotation = math.atan2(player_y - player_destination_y, player_x - player_destination_x)
