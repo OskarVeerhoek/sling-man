@@ -1,7 +1,7 @@
 function love.load()
-	background = love.graphics.newImage("field.bmp")
-	player = love.graphics.newImage("player2.png")
-	player_x = 100 --[[ window coordinates --]]
+	background = love.graphics.newImage("field.dds")
+	player = love.graphics.newImage("player.dds")
+	player_x = 200 --[[ window coordinates --]]
 	player_y = 100 --[[ window coordinates --]]
 	player_destination_x = player_x --[[ window coordinates --]]
 	player_destination_y = player_y --[[ window coordinates --]]

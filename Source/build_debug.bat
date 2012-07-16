@@ -1,5 +1,3 @@
 @ECHO OFF
-DEL "..\Temp\Love2D\*"
-COPY "3rdParty\*" "..\Temp\Love2D\"
-"C:\Program Files (x86)\Python\python.exe" build_debug.py
+"..\Lib\7za.exe" a "..\Temp\Love2D\sling-man.love" "..\Game\*" "*.lua"
 PAUSE

@@ -1,2 +1,2 @@
 @ECHO OFF
-START "" "..\Temp\Love2D\love.exe" "..\Temp\Love2D\."
+START "" "%PROGRAMFILES(x86)%\LOVE\love.exe" "..\Temp\Love2D\sling-man.love"
