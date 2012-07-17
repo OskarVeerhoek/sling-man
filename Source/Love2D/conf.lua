@@ -3,7 +3,7 @@ function love.conf(t)
     t.author = "Anzz, Oskar Veerhoek"
     t.screen.width = 500
     t.screen.height = 500
-    t.console = true
+    t.console = false
     t.version = "0.8.0"
     t.screen.fullscreen = false -- Enable fullscreen (boolean)
     t.screen.vsync = true       -- Enable vertical sync (boolean)
