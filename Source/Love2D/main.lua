@@ -19,7 +19,7 @@ function love.load()
             ["x"]=math.random(1500) - 750,
             ["y"]=math.random(1500) - 750,
             ["rotation"]=math.rad(math.random(360)),
-            ["speed"]=math.random(300) / 100,
+            ["speed"]=math.random(500) / 100,
             ["dest_x"]=math.random(300) + 100,
             ["dest_y"]=math.random(300) + 100,
             ["alive"]=true,
