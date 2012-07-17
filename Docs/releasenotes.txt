@@ -32,3 +32,5 @@ Changelog:
 
 Known Bugs:
 
+bug #002: When you are done you can run around without other people.
+bug #003: There is no strartmenu.
