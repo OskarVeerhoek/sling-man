@@ -6,6 +6,7 @@ function love.load()
     player_y = 100 --[[ window coordinates --]]
     player_destination_x = player_x --[[ window coordinates --]]
     player_destination_y = player_y --[[ window coordinates --]]
+    player_speed = 3
     victim_x = 550 --[[ window coordinates --]]
     victim_y = 550 --[[ window coordinates --]]
     scale = 1.0
@@ -13,7 +14,7 @@ function love.load()
     last_victim_y = victim_y
     victim_alive = true
     victim_fleeing = false
-    victim_speed = 3.5
+    victim_speed = 1.5
     victim_destination_x = 250
     victim_desintation_y = 250
     victim_rotation = 0 --[[ radians --]]
@@ -43,10 +44,10 @@ function love.update(dt)
     last_victim_y = victim_y
     if love.keyboard.isDown("left") then
         use_mouse = false
-        player_rotation = player_rotation - dt * 2
+        player_rotation = player_rotation - dt * 3.5
     elseif love.keyboard.isDown("right") then
         use_mouse = false
-        player_rotation = player_rotation + dt * 2
+        player_rotation = player_rotation + dt * 3.5
     end
     if love.mouse.isDown("l") then
         local x = love.mouse.getX()
@@ -62,8 +63,8 @@ function love.update(dt)
     end
     if use_mouse == true then
         local rotation = math.atan2(player_y - player_destination_y, player_x - player_destination_x)
-        player_x = player_x - math.cos(rotation) * 60 * dt * 2
-        player_y = player_y - math.sin(rotation) * 60 * dt * 2
+        player_x = player_x - math.cos(rotation) * 60 * dt * player_speed
+        player_y = player_y - math.sin(rotation) * 60 * dt * player_speed
         player_rotation = rotation - 1.570796327
         if player_x < player_destination_x + 1 and player_x > player_destination_x - 1 and player_y < player_destination_y + 1 and player_y > player_destination_y - 1 then
             use_mouse = false
@@ -71,12 +72,12 @@ function love.update(dt)
     else
         if love.keyboard.isDown("up") then
             use_mouse = false
-            player_x = player_x - math.cos(player_rotation + 1.570796327) * 60 * dt * 2;
-            player_y = player_y - math.sin(player_rotation + 1.570796327) * 60 * dt * 2;
+            player_x = player_x - math.cos(player_rotation + 1.570796327) * 60 * dt * player_speed;
+            player_y = player_y - math.sin(player_rotation + 1.570796327) * 60 * dt * player_speed;
         elseif love.keyboard.isDown("down") then
             use_mouse = false
-            player_x = player_x + math.cos(player_rotation + 1.570796327) * 60 * dt * 2;
-            player_y = player_y + math.sin(player_rotation + 1.570796327) * 60 * dt * 2;
+            player_x = player_x + math.cos(player_rotation + 1.570796327) * 60 * dt * player_speed;
+            player_y = player_y + math.sin(player_rotation + 1.570796327) * 60 * dt * player_speed;
         end
     end
     local distance_player_victim = distance(player_x, player_y, victim_x, victim_y)
@@ -91,7 +92,7 @@ function love.update(dt)
     else
         victim_fleeing = false
         victim_rotation = to_centre_rotation
-        victim_speed = 3.5
+        victim_speed = distance(victim_x, victim_y, 250, 250) / 100
         if distance(victim_x, victim_y, 250, 250) > 15 then
             victim_x = victim_x - math.cos(victim_rotation) * 60 * dt * victim_speed
             victim_y = victim_y - math.sin(victim_rotation) * 60 * dt * victim_speed

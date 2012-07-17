@@ -25,9 +25,10 @@ Changelog:
 
 - Enemy only moves when you're closer than 150 pixels to it
 - Enemy moves faster the closer you come to it
+- Enemy moves toward centre when you're farther than 150 pixels away
+- Enemy always looks in the direction of the centre
 - Fixed bug #001
 - Fixed bug #000
 
 Known Bugs:
 
-Bug #002: Enemy is stuck in the bounding circle
